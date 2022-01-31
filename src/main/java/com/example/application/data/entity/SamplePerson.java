@@ -3,11 +3,13 @@ package com.example.application.data.entity;
 import com.example.application.data.AbstractEntity;
 import java.time.LocalDate;
 import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class SamplePerson extends AbstractEntity {
 
     private String firstName;
+    @NotBlank
     private String lastName;
     private String email;
     private String phone;

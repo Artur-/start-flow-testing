@@ -40,24 +40,24 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
     private final String SAMPLEPERSON_ID = "samplePersonID";
     private final String SAMPLEPERSON_EDIT_ROUTE_TEMPLATE = "master-detail/%d/edit";
 
-    private Grid<SamplePerson> grid = new Grid<>(SamplePerson.class, false);
+    Grid<SamplePerson> grid = new Grid<>(SamplePerson.class, false);
 
-    private TextField firstName;
-    private TextField lastName;
-    private TextField email;
-    private TextField phone;
-    private DatePicker dateOfBirth;
-    private TextField occupation;
-    private Checkbox important;
+    TextField firstName;
+    TextField lastName;
+    TextField email;
+    TextField phone;
+    DatePicker dateOfBirth;
+    TextField occupation;
+    Checkbox important;
 
-    private Button cancel = new Button("Cancel");
-    private Button save = new Button("Save");
+    Button cancel = new Button("Cancel");
+    Button save = new Button("Save");
 
-    private BeanValidationBinder<SamplePerson> binder;
+    BeanValidationBinder<SamplePerson> binder;
 
-    private SamplePerson samplePerson;
+    SamplePerson samplePerson;
 
-    private SamplePersonService samplePersonService;
+    SamplePersonService samplePersonService;
 
     public MasterDetailView(@Autowired SamplePersonService samplePersonService) {
         this.samplePersonService = samplePersonService;
@@ -86,7 +86,7 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
                                 ? "var(--lumo-primary-text-color)"
                                 : "var(--lumo-disabled-text-color)");
 
-        grid.addColumn(importantRenderer).setHeader("Important").setAutoWidth(true);
+        grid.addColumn(importantRenderer).setHeader("Important").setAutoWidth(true).setSortable(true).setKey("important");
 
         grid.setItems(query -> samplePersonService.list(
                 PageRequest.of(query.getPage(), query.getPageSize(), VaadinSpringDataHelpers.toSpringDataSort(query)))
