@@ -16,7 +16,7 @@ import org.springframework.context.ApplicationContext;
 import kotlin.jvm.functions.Function0;
 
 @SpringBootTest
-public class AbstractViewTest {
+public abstract class AbstractTest {
 
     @Autowired
     private ApplicationContext ctx;

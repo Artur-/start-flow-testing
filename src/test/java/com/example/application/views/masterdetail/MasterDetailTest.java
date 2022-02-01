@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import com.example.application.data.entity.SamplePerson;
-import com.example.application.views.AbstractViewTest;
+import com.example.application.views.AbstractTest;
 import com.github.mvysny.kaributesting.v10.GridKt;
 import com.github.mvysny.kaributesting.v10.LocatorJ;
 import com.github.mvysny.kaributesting.v10.NotificationsKt;
@@ -17,7 +17,7 @@ import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class MasterDetailViewTest extends AbstractViewTest {
+public class MasterDetailTest extends AbstractTest {
 
     private MasterDetailView view;
     private Grid<SamplePerson> grid;

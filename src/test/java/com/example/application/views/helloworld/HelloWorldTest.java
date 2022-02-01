@@ -1,20 +1,16 @@
 package com.example.application.views.helloworld;
 
-import com.example.application.Application;
-import com.github.mvysny.kaributesting.v10.MockVaadin;
+import com.example.application.views.AbstractTest;
 import com.github.mvysny.kaributesting.v10.NotificationsKt;
-import com.github.mvysny.kaributesting.v10.Routes;
 
 import org.junit.Before;
 import org.junit.Test;
 
-public class HelloWorldTest {
-    private static Routes routes = new Routes().autoDiscoverViews(Application.class.getPackageName());
+public class HelloWorldTest extends AbstractTest {
     private HelloWorldView view;
 
     @Before
-    public void setupVaadin() {
-        MockVaadin.setup(routes);
+    public void setup() {
         view = new HelloWorldView();
     }
 

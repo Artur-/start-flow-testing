@@ -1,22 +1,17 @@
 package com.example.application.views.about;
 
-import com.example.application.Application;
-import com.github.mvysny.kaributesting.v10.MockVaadin;
-import com.github.mvysny.kaributesting.v10.Routes;
+import com.example.application.views.AbstractTest;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class AboutTest {
-    private static Routes routes = new Routes().autoDiscoverViews(Application.class.getPackageName());
+public class AboutTest extends AbstractTest {
     private AboutView view;
 
     @Before
-    public void setupVaadin() {
-        MockVaadin.setup(routes);
+    public void setup() {
         view = new AboutView();
-
     }
 
     @Test
